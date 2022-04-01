@@ -1,0 +1,26 @@
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%-50(%d %p) %-100.100([%t] %C): %msg%n%throwable"/>
+        </Console>
+        <RollingFile name="File" fileName="./logs/app-log4j2.log" filePattern="./logs/app-%d{-dd-MMMM-yyyy}-%i.log4j2.log.gz">
+            <PatternLayout>
+                <pattern>%-50(%d %p) %-100.100([%t] %C): %msg%n%throwable</pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+        <Logger name="uz.elmurodov.logging" level="DEBUG"/>
+    </Loggers>
+
+</Configuration>
