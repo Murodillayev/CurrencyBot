@@ -150,7 +150,7 @@ public class CurrencyBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "5026704624:AAHs4wXGIHzQeHSQWHdtOxGFKLmAE4nTNwo";
+        return "****************";
     }
 
 }
